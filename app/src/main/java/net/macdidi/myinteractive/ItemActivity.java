@@ -2,7 +2,9 @@ package net.macdidi.myinteractive;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -93,6 +95,9 @@ public class ItemActivity extends AppCompatActivity
             else
             {
                 item.setDatetime(new Date().getTime());
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                int color = sharedPreferences.getInt("DEFAULT_COLOR",-1);
+                item.setColor(getColors(color));
             }
             Intent result = getIntent();
             result.putExtra("net.macdidi.myinteractive.Item", item);
