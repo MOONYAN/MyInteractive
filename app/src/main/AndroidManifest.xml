@@ -16,10 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AboutActivity"
             android:theme="@style/Theme.AppCompat.Dialog">
         </activity>
+
         <activity android:name=".ItemActivity">
             <intent-filter>
                 <action android:name="net.macdidi.myinteractive.ADD_ITEM"/>
@@ -32,6 +34,10 @@
         <activity
             android:name=".ColorActivity"
             android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="net.macdidi.myinteractive.CHOOSE_COLOR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
 
         <activity android:name=".PrefActivity"/>

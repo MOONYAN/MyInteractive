@@ -35,7 +35,7 @@ public class ItemActivity extends AppCompatActivity
         Intent intent = getIntent();
         String action = intent.getAction();
 
-        if(action.equals("net.macdidi.myinteractive.EDIT_ITEM"))
+        if (action.equals("net.macdidi.myinteractive.EDIT_ITEM"))
         {
             item = (Item) intent.getExtras().getSerializable("net.macdidi.myinteractive.Item");
 
@@ -59,7 +59,7 @@ public class ItemActivity extends AppCompatActivity
     public void clickFunction(View view)
     {
         int id = view.getId();
-        switch(id)
+        switch (id)
         {
             case R.id.take_picture:
                 break;
@@ -70,14 +70,14 @@ public class ItemActivity extends AppCompatActivity
             case R.id.set_alarm:
                 break;
             case R.id.select_color:
-                startActivityForResult(new Intent(this,ColorActivity.class),START_COLOR);
+                startActivityForResult(new Intent(this, ColorActivity.class), START_COLOR);
                 break;
         }
     }
 
     public void onSubmit(View view)
     {
-        if(view.getId()==R.id.ok_item)
+        if (view.getId() == R.id.ok_item)
         {
 
             String titleText = title_text.getText().toString();
@@ -86,7 +86,7 @@ public class ItemActivity extends AppCompatActivity
             item.setTitle(titleText);
             item.setContent(contentText);
 
-            if(getIntent().getAction().equals("net.macdidi.myinteractive.EDIT_ITEM"))
+            if (getIntent().getAction().equals("net.macdidi.myinteractive.EDIT_ITEM"))
             {
                 item.setLastModify(new Date().getTime());
             }
@@ -98,7 +98,7 @@ public class ItemActivity extends AppCompatActivity
             result.putExtra("net.macdidi.myinteractive.Item", item);
 //            result.putExtra("titleText", titleText);
 //            result.putExtra("contentText", contentText);
-            setResult(Activity.RESULT_OK,result);
+            setResult(Activity.RESULT_OK, result);
         }
         finish();
     }
@@ -126,23 +126,28 @@ public class ItemActivity extends AppCompatActivity
         }
     }
 
-    private Colors getColors(int colorId)
+    public static Colors getColors(int colorId)
     {
         Colors result = Colors.LIGHTGREY;
 
-        if (colorId == Colors.BLUE.parseColor()) {
+        if (colorId == Colors.BLUE.parseColor())
+        {
             result = Colors.BLUE;
         }
-        else if (colorId == Colors.PURPLE.parseColor()) {
+        else if (colorId == Colors.PURPLE.parseColor())
+        {
             result = Colors.PURPLE;
         }
-        else if (colorId == Colors.GREEN.parseColor()) {
+        else if (colorId == Colors.GREEN.parseColor())
+        {
             result = Colors.GREEN;
         }
-        else if (colorId == Colors.ORANGE.parseColor()) {
+        else if (colorId == Colors.ORANGE.parseColor())
+        {
             result = Colors.ORANGE;
         }
-        else if (colorId == Colors.RED.parseColor()) {
+        else if (colorId == Colors.RED.parseColor())
+        {
             result = Colors.RED;
         }
 

@@ -4,6 +4,10 @@
         android:key="DEFAULT_COLOR"
         android:title="@string/default_color"
         android:summary="@string/default_color_summary">
+        <intent
+            android:action="net.macdidi.myinteractive.CHOOSE_COLOR"
+            android:targetPackage="net.macdidi.myinteractive"
+            android:targetClass="net.macdidi.myinteractive.ColorActivity"/>
 
     </Preference>
 
