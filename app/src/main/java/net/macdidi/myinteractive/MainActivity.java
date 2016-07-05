@@ -342,4 +342,9 @@ public class MainActivity extends AppCompatActivity
         }
 //        super.onActivityResult(requestCode, resultCode, data);
     }
+
+    public void clickPreferences(MenuItem item)
+    {
+        startActivity(new Intent(this,PrefActivity.class));
+    }
 }

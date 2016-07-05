@@ -34,4 +34,9 @@
         android:title="DELETE"
         app:showAsAction="always"/>
 
+    <item
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:onClick="clickPreferences"
+        android:title="Setting"
+        app:showAsAction="always"/>
 </menu>

@@ -33,6 +33,8 @@
             android:name=".ColorActivity"
             android:theme="@android:style/Theme.Dialog">
         </activity>
+
+        <activity android:name=".PrefActivity"/>
     </application>
 
 </manifest>
